@@ -73,7 +73,7 @@ const FoodDetails: React.FC = () => {
 
   useEffect(() => {
     async function loadFood(): Promise<void> {
-      const response = await api.get(`/foods${routeParams.id}`);
+      const response = await api.get(`/foods/${routeParams.id}`);
 
       setFood({
         ...response.data,
@@ -126,7 +126,7 @@ const FoodDetails: React.FC = () => {
     if (isFavorite) {
       api.delete(`/favorites/${food.id}`);
     } else {
-      api.post(`/favorites`, food);
+      api.post(`favorites`, food);
     }
 
     setIsFavorite(!isFavorite);
