@@ -64,7 +64,7 @@ const Dashboard: React.FC = () => {
       api
         .get('/foods', {
           params: {
-            category_like: 1,
+            category_like: selectedCategory,
             name_like: searchValue,
           },
         })
